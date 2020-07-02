@@ -60,7 +60,7 @@
                         <li><a href="{{ url('/category') }}">Add Category</a></li>
                     </ul>
                 </li>
-                    <li>
+                <li>
                     <a href="#" class="waves-effect"><i data-icon="O" class="linea-icon linea-software fa-fw"></i> <span class="hide-menu">Banner<span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level">
                         <li><a href="{{ url('/list_banner') }}">All Banners</a></li>

@@ -70,6 +70,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/deleteTest/{id}', 'ProductController@deleteTest')->name('deleteTest');
         Route::get('/list_order', 'UploadBannerController@list_order')->name('list_order');
         Route::get('/deleteOrder/{id}', 'UploadBannerController@deleteOrder')->name('deleteOrder');
+        Route::get('/updateStatus/{id}', 'CartController@updateStatus')->name('updateStatus');
+        Route::get('/cancelOrder/{id}', 'CartController@cancelOrder')->name('cancelOrder');
 
 
         ////////////////////////////////////////////////////////////////////////////////////////
@@ -84,11 +86,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/viewCart', 'CartController@viewCart')->name('viewCart');
     Route::get('/addToCart/{productId}', 'CartController@addToCart')->name('addToCart');
     Route::get('/deleteItem/{id}', 'CartController@delete')->name('deleteCart');
+    Route::get('/deleteCartItem/{id}', 'CartController@deleteItem')->name('deleteItem');
     Route::get('/clearCart', 'CartController@clearCart')->name('clearCart');
     Route::get('/getCheckout', 'CartController@getCheckout')->name('getCheckout');
     Route::post('/checkout', 'CartController@checkout')->name('checkout');
     Route::get('/viewOrder', 'CartController@viewOrder')->name('viewOrder');
     Route::get('/search', 'ProductController@search')->name('search');
+
 
 
 

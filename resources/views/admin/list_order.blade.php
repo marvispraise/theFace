@@ -38,7 +38,9 @@
                                             <th>Product</th>
                                             <th>Name</th>
                                             <th>Price</th>
-                                            <th>Actions</th>
+                                            <th>Delete</th>
+                                            <th>Action</th>
+                                            <th>Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -49,8 +51,42 @@
                                             <td><img src="/images/{{$order->image}}" alt="banner" style="height: 50px; width: 50px;"/></td>
                                             <td>{{$order->name}}</td>
                                             <td>{{$order->price}}</td>
-                                            <td><a href="{{url('edit_cat/'.$order->id)}}"><span class="label label-rouded label-warning"> Edit</span></a> || <a href="{{ route('deleteOrder', ['id' => $order->id]) }}"> <span class="label label-rouded label-danger">Delete</span></a></td>
-                                            <td></td>
+                                            <td><a href="{{ route('deleteOrder', ['id' => $order->id]) }}"> <span><i class="fa fa-trash-o"></i></span></a></td>
+                                            <td>
+                                                <form>
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            @if($order->status == 0)
+                                                                <span class="label label-danger">Order Canceled</span>
+                                                            @else
+                                                            @if($order->status == 4)
+                                                                    <a href="{{ route('updateStatus', ['id' => $order->id]) }}" class="btn btn-warning btn-outline">Confirm Order</a> ||
+                                                                    <a href="{{ route('cancelOrder', ['id' => $order->id]) }}" class="btn btn-danger btn-outline">Cancel Order</a>
+                                                                @elseif($order->status == 3)
+                                                                    <a href="{{ route('updateStatus', ['id' => $order->id]) }}" class="btn btn-info btn-outline">Ship Order</a>
+                                                                @elseif($order->status == 2)
+                                                                    <a href="{{ route('updateStatus', ['id' => $order->id]) }}" class="btn btn-success btn-outline">Deliver Order</a>
+                                                                @elseif($order->status == 1)
+                                                                    <span class="label label-success">Order Delivered</span>
+                                                                @endif
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </td>
+                                            <td>
+                                                @if($order->status == 4)
+                                                    <span class="label label-warning">Pending</span>
+                                                @elseif($order->status == 3)
+                                                    <span class="label label-primary">Confirmed</span>
+                                                @elseif($order->status == 2)
+                                                    <span class="label label-info">Shipped</span>
+                                                @elseif($order->status == 1)
+                                                    <span class="label label-success">Delivered</span>
+                                                @elseif($order->status == 0)
+                                                    <span class="label label-danger">Canceled</span>
+                                                @endif
+                                            </td>
                                         </tr>
                                         @endforeach
                                     </tbody>

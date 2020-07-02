@@ -77,6 +77,11 @@
                                         <td class="action">
                                             <a href="{{url('/deleteItem/'.$item->id)}}">Delete item</a>
                                         </td>
+                                        {{--<div class="col-lg-3 col-xs-12">--}}
+                                            {{--<div class="white-box">--}}
+                                                {{--<h3 class="box-title">Warning message <small>(Click on image)</small></h3>--}}
+                                                {{--<img src="../plugins/images/alert4.png" alt="alert" class="img-responsive model_img" id="sa-warning"> </div>--}}
+                                        {{--</div>--}}
                                     </tr>
 
                                 @endforeach

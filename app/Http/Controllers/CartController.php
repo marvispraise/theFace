@@ -42,7 +42,13 @@ class CartController extends Controller
 
         $id = $product->unique_id;
         $name = $product->name;
-        $price = $product->price;
+        if($product->discount != 0){
+            $price = $product->price - ($product->price * $product->discount / 100);
+        }else{
+
+            $price = $product->price;
+
+        }
         $image = $product->product_image;
         $availability = $product->availability;
         $qty = 1;
@@ -64,7 +70,7 @@ class CartController extends Controller
         CartFacade::session($userId)->remove($id);
 
         return back()
-            ->with('success','Successfully Deleted From Cart.');
+            ->with('errors','Successfully Deleted From Cart.');
     }
     public function clearCart()
     {
@@ -76,7 +82,7 @@ class CartController extends Controller
                 ->with('success','Successfully Cleared Cart.');
         }else{
             return back()
-                ->with('error','
+                ->with('errors','
                  Could Not Clear Cart.');
         }
 
@@ -178,5 +184,40 @@ class CartController extends Controller
 
     }
 
+    public function deleteItem($id)
+    {
+        $userId = 1; // get this from session or wherever it came from
+
+        CartFacade::session($userId)->remove($id);
+
+     return back();
+    }
+
+    public function updateStatus($id){
+
+        $orderItem = OrderItem::find($id);
+//        $update = OrderItem::where('status')->update();
+        if($orderItem->status == 4){
+            $orderItem->status  = 3;
+        }elseif ($orderItem->status == 3){
+            $orderItem->status  = 2;
+        }
+        elseif ($orderItem->status == 2){
+            $orderItem->status  = 1;
+        }
+
+        $orderItem->update();
+
+        return back();
+    }
+
+    public function cancelOrder($id){
+        $orderItem = OrderItem::find($id);
+        $orderItem->status  = 0;
+        $orderItem->update();
+
+        return back()->with('errs','Order Canceled.');
+
+    }
 
 }

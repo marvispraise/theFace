@@ -99,6 +99,7 @@
                         <!-- List Products -->
                         <div class="products  products-grid">
                             <ol class="product-items row">
+                                @if(count($categoryProduct['category_products']) > 0)
                                 @foreach($categoryProduct['category_products'] as $product)
                                 <li class="col-sm-4 product-item ">
                                     <div class="product-item-opt-1">
@@ -128,6 +129,17 @@
                                     </div>
                                 </li>
                                 @endforeach
+                                    @else
+                                    <div class="panel">
+                                        <div class="panel-body">
+                                            <div class="alert alert-danger alert-block">
+                                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                                <strong>Sorry, No Product In This Category</strong>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                @endif
 
                             </ol><!-- list product -->
                         </div> <!-- List Products -->

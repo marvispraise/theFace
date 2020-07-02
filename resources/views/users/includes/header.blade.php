@@ -5,13 +5,9 @@
         <div class="header-top">
 
             <ul class="nav-right">
+                <li><a href="{{url('/getCheckout')}}">Checkout</a></li>
                 @if(auth()->user())
                 @include('layouts.app')
-                @else
-                <li><a href="{{url('/login')}}">Login</a></li>
-                <li><a href="{{url('/register')}}">Register</a></li>
-                @endif
-                <li><a href="{{url('/getCheckout')}}">Checkout</a></li>
                 <li class="dropdown setting">
                     <a data-toggle="dropdown" role="button" href="#" class="dropdown-toggle "><span>My Account</span> <i aria-hidden="true" class="fa fa-angle-down"></i></a>
                     <div class="dropdown-menu  ">
@@ -20,6 +16,12 @@
                         </ul>
                     </div>
                 </li>
+                @else
+                <li><a href="{{url('/login')}}">Login</a></li>
+                <li><a href="{{url('/register')}}">Register</a></li>
+                @endif
+
+
             </ul>
         </div>
     </div>
@@ -106,10 +108,6 @@
                             @endforeach
 
                         </ul>
-
-                        <div class="view-all-categori">
-                            <a  class="open-cate btn-view-all">View more</a>
-                        </div>
                     </div>
 
                 </div><!-- categori -->
@@ -121,7 +119,8 @@
                     </div>
                     <div class="block-content">
                         <div class="form-search">
-                            <form method="get" action="">
+                            <form method="get" action="{{url('/search')}}">
+                                @csrf
                                 <div class="box-group">
                                     <input type="text" class="form-control" placeholder="Search your products" name="search">
                                     <button class="btn btn-search" type="submit"><span>search</span></button>
@@ -158,7 +157,7 @@
                                             @foreach($cart_items as $item)
                                                 <li class="product-item">
                                                     <a class="product-item-photo" href="#" title="{{$item->name}}">
-                                                        <img class="product-image-photo" src="images/{{$item->image}}" alt="The Name Product">
+                                                        <img class="product-image-photo" src="/images/{{$item->image}}" alt="The Name Product">
                                                     </a>
                                                     <div class="product-item-details">
                                                         <strong class="product-item-name">
@@ -171,7 +170,7 @@
                                                             <span class="label">Qty: </span ><span class="number">{{$item->quantity}}</span>
                                                         </div>
                                                         <div class="product-item-actions">
-                                                            <a class="action delete" href="#" title="Remove item">
+                                                            <a class="action delete" href="{{url('/deleteCartItem/'.$item->id)}}" title="Remove item">
                                                                 <span>Remove</span>
                                                             </a>
                                                         </div>

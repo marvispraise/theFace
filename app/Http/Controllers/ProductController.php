@@ -302,10 +302,10 @@ class ProductController extends Controller
 
     public function search(Request $request){
 
-         $search_results = Product::where('name', 'LIKE', '%', $request->search, '%');
-        dd($search_results);
+         $search_results = Product::where('name','LIKE', '%'.$request->search.'%')->get();
+//        dd($search_results);
 
-        return view('users/products',
+        return view('users.search',
             [
                 'search_results' => $search_results,
             ]);
