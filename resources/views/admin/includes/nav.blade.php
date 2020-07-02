@@ -46,7 +46,7 @@
                 <li><a href="{{url('/dashboard')}}" class="waves-effect"><i class="linea-icon linea-basic fa-fw" data-icon="v"></i> <span class="hide-menu">Dashboard</span></a></li>
 
                 <li>
-                    <a href="#" class="waves-effect"><i data-icon="O" class="linea-icon linea-software fa-fw"></i> <span class="hide-menu">Product<span class="fa arrow"></span></span></a>
+                    <a href="#" class="waves-effect"><i data-icon="a" class="linea-icon linea-ecommerce fa-fw"></i> <span class="hide-menu">Product<span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level">
                         <li><a href="{{ url('/list_product') }}">All Products</a></li>
                         <li><a href="{{ url('/product') }}">Add Product</a></li>
@@ -61,35 +61,35 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#" class="waves-effect"><i data-icon="O" class="linea-icon linea-software fa-fw"></i> <span class="hide-menu">Banner<span class="fa arrow"></span></span></a>
+                    <a href="#" class="waves-effect"><i data-icon="]" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Banner<span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level">
                         <li><a href="{{ url('/list_banner') }}">All Banners</a></li>
                         <li><a href="{{ url('/upload_banner') }}">Add Banner</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#" class="waves-effect"><i data-icon="O" class="linea-icon linea-software fa-fw"></i> <span class="hide-menu">Index Banner<span class="fa arrow"></span></span></a>
+                    <a href="#" class="waves-effect"><i data-icon="]" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Index Banner<span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level">
                         <li><a href="{{ url('/list_index') }}">All Index Banners</a></li>
                         <li><a href="{{ url('/upload_index_banner') }}">Add IndexBanner</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#" class="waves-effect"><i data-icon="O" class="linea-icon linea-software fa-fw"></i> <span class="hide-menu">Testimonial<span class="fa arrow"></span></span></a>
+                    <a href="#" class="waves-effect"><i data-icon="." class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Testimonial<span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level">
                         <li><a href="{{ url('/list_testimonial') }}">All Testimonials</a></li>
                         <li><a href="{{ url('/testimonial') }}">Add Testimonial</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#" class="waves-effect"><i data-icon="O" class="linea-icon linea-software fa-fw"></i> <span class="hide-menu">Section Image<span class="fa arrow"></span></span></a>
+                    <a href="#" class="waves-effect"><i data-icon="]" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Section Image<span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level">
                         <li><a href="{{ url('/list_section') }}">All Ad Banners</a></li>
                         <li><a href="{{ url('/section_image') }}">Add Ad_Banner Image</a></li>
                     </ul>
                 </li>
 
-                <li><a href="{{url('/list_order')}}" class="waves-effect"><i class="linea-icon linea-basic fa-fw" data-icon="v"></i> <span class="hide-menu">Orders</span></a></li>
+                <li><a href="{{url('/list_order')}}" class="waves-effect"><i data-icon="x" class="linea-icon linea-ecommerce fa-fw" data-icon="v"></i> <span class="hide-menu">Orders</span></a></li>
                 {{--<li><a href="{{ route('logout') }}" class="waves-effect"--}}
                        {{--onclick="event.preventDefault();--}}
                        {{--document.getElementById('logout-form').submit();">--}}

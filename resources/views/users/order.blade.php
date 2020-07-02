@@ -53,7 +53,21 @@
                                             <p class="product-name"><a href="#">{{$item->name}} </a></p>
                                         </td>
                                         <td class="price"><span>${{$item->price}}</span></td>
-                                        <td class="cart_description"><span><span class="label label-rounded label-success">Delivered</span></span></td>
+                                        <td class="cart_description">
+                                            <span>
+                                                @if($item->status == 4)
+                                                    <span class="label label-rounded label-warning">Pending</span>
+                                                @elseif($item->status == 3)
+                                                    <span class="label label-rounded label-primary">Confirmed</span>
+                                                @elseif($item->status == 2)
+                                                    <span class="label label-rounded label-info">Shipped</span>
+                                                @elseif($item->status == 1)
+                                                    <span class="label label-rounded label-success">Delivered</span>
+                                                @elseif($item->status == 0)
+                                                    <span class="label label-rounded label-danger">Canceled</span>
+                                                @endif
+                                            </span>
+                                        </td>
                                     </tr>
                                 @endforeach
                                 @endif
