@@ -234,19 +234,19 @@
     <!-- jQuery -->
     @include("admin.includes.footer2");
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $.toast({
-                heading: 'Welcome to Fresh Fire Chapel Admin.',
-                text: 'Customise and edit anything.',
-                position: 'top-right',
-                loaderBg: '#ff6849',
-                icon: 'info',
-                hideAfter: 3500,
-                stack: 6
-            })
-        });
-    </script>
+    {{--<script type="text/javascript">--}}
+        {{--$(document).ready(function() {--}}
+            {{--$.toast({--}}
+                {{--heading: 'Welcome to Fresh Fire Chapel Admin.',--}}
+                {{--text: 'Customise and edit anything.',--}}
+                {{--position: 'top-right',--}}
+                {{--loaderBg: '#ff6849',--}}
+                {{--icon: 'info',--}}
+                {{--hideAfter: 3500,--}}
+                {{--stack: 6--}}
+            {{--})--}}
+        {{--});--}}
+    {{--</script>--}}
     <!--Style Switcher -->
 </body>
 
