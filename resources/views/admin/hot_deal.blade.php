@@ -16,12 +16,12 @@
             <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Section Product</h4>
+                        <h4 class="page-title">Banner</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <ol class="breadcrumb">
                             <li><a href="#">Dashboard</a></li>
-                            <li class="active">Section Product</li>
+                            <li class="active">Banner</li>
                         </ol>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -32,13 +32,33 @@
                     <div class="col-md-3"></div>
                     <div class="col-md-6">
                         <div class="white-box">
-                            <h3 class="box-title m-b-0">Section Product</h3>
-                            <p class="text-muted m-b-30 font-13"> Upload Section Product</p>
+                            <h3 class="box-title m-b-0">Index Banner</h3>
+                            <p class="text-muted m-b-30 font-13"> Upload Index Banner</p>
                             <div class="row">
                                 <div class="col-sm-12 col-xs-12">
-                                    <form method="post" action="{{ route('sectionUpload') }}" enctype="multipart/form-data">
+                                    <form method="post" action="{{ route('image') }}" enctype="multipart/form-data">
                                         @csrf
-
+                                        <div class="form-group">
+                                            <label for="exampleInputImage">Text1</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="ti-text"></i></div>
+                                                <input type="text" class="form-control" id="exampleInputImage" name="text1">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputImage">Text2</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="ti-text"></i></div>
+                                                <input type="text" class="form-control" id="exampleInputImage" name="text2">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputImage">Text3</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="ti-text"></i></div>
+                                                <input type="text" class="form-control" id="exampleInputImage" name="text3">
+                                            </div>
+                                        </div>
                                         <div class="form-group">
                                             <label for="exampleInputImage">Upload Image</label>
                                             <div class="input-group">
