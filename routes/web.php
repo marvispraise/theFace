@@ -23,14 +23,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::group(['middleware' => ['Admin']], function () {
 
 
-        Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+        Route::get('/admin-dashboard', 'DashboardController@index')->name('dashboard');
         Route::get('/upload_banner', 'UploadBannerController@viewBanner')->name('banner');
         Route::post('/image-upload', 'UploadBannerController@imageUploadPost')->name('image.upload');
         Route::get('/list_banner', 'UploadBannerController@listBanner')->name('listBanner');
         Route::get('/edit_banner/{id}', 'UploadBannerController@edit_banner')->name('edit_banner');
         Route::post('/editBanner/{id}', 'UploadBannerController@editBanner')->name('editBanner');
         Route::get('/deleteBanner/{id}', 'UploadBannerController@deleteBanner')->name('deleteBanner');
-
 
 
 
@@ -48,9 +47,9 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('/editCategory/{id}', 'ProductController@editCategory')->name('editCategory');
         Route::get('/deleteCategory/{id}', 'ProductController@deleteCategory')->name('deleteCategory');
 
-        Route::get('/section_image', 'UploadBannerController@viewSection')->name('section');
+        Route::get('/blog', 'UploadBannerController@viewSection')->name('section');
         Route::post('/upload_image', 'UploadBannerController@storeSectionImage')->name('sectionUpload');
-        Route::get('/list_section', 'UploadBannerController@list_section')->name('list_section');
+        Route::get('/list_blog', 'UploadBannerController@list_section')->name('list_blog');
         Route::get('/edit_section/{id}', 'UploadBannerController@edit_section')->name('edit_section');
         Route::post('/editSection/{id}', 'UploadBannerController@editSection')->name('editSection');
         Route::get('/deleteSection/{id}', 'UploadBannerController@deleteSection')->name('deleteSection');
@@ -73,6 +72,11 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/updateStatus/{id}', 'CartController@updateStatus')->name('updateStatus');
         Route::get('/cancelOrder/{id}', 'CartController@cancelOrder')->name('cancelOrder');
 
+        Route::get('/hotDeal', 'ProductController@hotDeal')->name('hotDeal');
+        Route::get('/searchP', 'ProductController@searchP')->name('searchP');
+        Route::post('/saveHotDeal', 'ProductController@saveHotDeal')->name('saveHotDeal');
+
+
 
         ////////////////////////////////////////////////////////////////////////////////////////
         ///users
@@ -81,8 +85,11 @@ Route::group(['middleware' => ['auth']], function () {
 });
 
     Route::get('/', 'UsersController@home')->name('index');
+    Route::get('/blog_details/{id}', 'PostController@blog_details')->name('blog_details');
+    Route::get('/blogView', 'PostController@blogView')->name('blogView');
+    Route::post('/subscribe', 'PostController@subscribe')->name('subscribe');
     Route::get('/product/{id}', 'ProductController@productDetails')->name('productDetails');
-    Route::get('/categoryProduct/{category}', 'ProductController@viewProduct')->name('viewProduct');
+    Route::get('/shop/{category}', 'ProductController@viewProduct')->name('viewProduct');
     Route::get('/viewCart', 'CartController@viewCart')->name('viewCart');
     Route::get('/addToCart/{productId}', 'CartController@addToCart')->name('addToCart');
     Route::get('/deleteItem/{id}', 'CartController@delete')->name('deleteCart');
@@ -92,6 +99,15 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/checkout', 'CartController@checkout')->name('checkout');
     Route::get('/viewOrder', 'CartController@viewOrder')->name('viewOrder');
     Route::get('/search', 'ProductController@search')->name('search');
+    Route::get('/about', 'UsersController@about')->name('about');
+    Route::get('/contact', 'UsersController@contact')->name('contact');
+    Route::get('/userLogin', 'AuthController@userLogin')->name('userLogin');
+    Route::get('/userRegister', 'AuthController@userRegister')->name('userRegister');
+    Route::post('/post-login', 'AuthController@postLogin')->name('post-login');
+    Route::post('/post-registration', 'AuthController@postRegistration')->name('post-registration');
+    Route::get('/userLogout', 'AuthController@logout')->name('userLogout');
+
+
 
 
 

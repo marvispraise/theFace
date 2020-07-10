@@ -30,7 +30,7 @@ class CartController extends Controller
             });
 
 
-        return view('users/cart',['items' => $items]);
+        return view('users.cart',['items' => $items]);
     }
 
     public function addToCart($productId)
@@ -106,7 +106,7 @@ class CartController extends Controller
 
             $order = Order::where('user_id',auth()->user()->id)->get();
 
-            return view('users.Checkout',['items' => $items, 'order' => $order]);
+            return view('users.checkout',['items' => $items, 'order' => $order]);
 
         }else{
             return redirect()->route('viewCart')
@@ -178,10 +178,13 @@ class CartController extends Controller
     }
 
     public function viewOrder(){
+        if (auth()->user()->id){
             $items = OrderItem::where('user_id', auth()->user()->id)->get();
 
-        return view('users.order',['items' => $items]);
+            return view('users.orders',['items' => $items]);
+        }
 
+            return back()->with('errs', 'NotAuthorized');
     }
 
     public function deleteItem($id)

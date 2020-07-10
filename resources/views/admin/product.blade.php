@@ -46,7 +46,7 @@
                                                 <select name="category" class="form-control" id="exampleInputTitle1">
                                                     <option value="" selected>Select a category</option>
                                                     @foreach($categories as $category)
-                                                    <option value="{{ $category->unique_id }}">{{ $category->category_name }}</option>
+                                                        <option value="{{ $category->unique_id }}">{{ $category->category_name }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -86,17 +86,17 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="exampleInputTitle">Special Product</label>
+                                            <label for="exampleInputTitle">Featured Product</label>
                                             <div class="input-group">
-                                                <input type="checkbox" name="specialProduct" id="exampleInputTitle1" value=1>
-                                                <label> Is this a special product</label>
+                                                <input type="checkbox" name="featuredProduct" id="exampleInputTitle1" value=1>
+                                                <label> Is this a Featured Product</label>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputTitle">Hot Deal</label>
+                                            <label for="exampleInputTitle">Best Seller</label>
                                             <div class="input-group">
-                                                <input type="checkbox" name="hotDeal" id="exampleInputTitle1" value=1>
-                                                <label> Is this a Hot deal product</label>
+                                                <input type="checkbox" name="bestSeller" id="exampleInputTitle1" value=1>
+                                                <label> Is this a Best Deal</label>
                                             </div>
                                         </div>
 

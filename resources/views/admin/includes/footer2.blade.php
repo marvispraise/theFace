@@ -20,9 +20,29 @@
 <script src="{{asset('/plugins/bower_components/raphael/raphael-min.js')}}"></script>
 <script src="{{asset('/plugins/bower_components/morrisjs/morris.js')}}"></script>
 <script src="{{asset('/js/dashboard1.js')}}"></script>
-<!-- Sparkline chart JavaScript -->
+<script src="{{asset('/plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.js')}}"></script>
 <script src="{{asset('/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js')}}"></script>
 <script src="{{asset('/plugins/bower_components/jquery-sparkline/jquery.charts-sparkline.js')}}"></script>
 <script src="{{asset('/plugins/bower_components/toast-master/js/jquery.toast.js')}}"></script>
 <script src="{{asset('/plugins/bower_components/sweetalert/sweetalert.min.js')}}"></script>
 <script src="{{asset('/plugins/bower_components/sweetalert/jquery.sweet-alert.custom.js')}}"></script>
+<script src="{{asset('/plugins/bower_components/custom-select/custom-select.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('/plugins/bower_components/bootstrap-select/bootstrap-select.min.js')}}" type="text/javascript"></script>
+
+
+<script>
+    // Date Picker
+    jQuery('.mydatepicker, #datepicker').datepicker();
+    jQuery('#datepicker-autoclose').datepicker({
+        autoclose: true,
+        todayHighlight: true
+    });
+    jQuery('#date-range').datepicker({
+        toggleActive: true
+    });
+    jQuery('#datepicker-inline').datepicker({
+
+        todayHighlight: true
+    });
+
+</script>

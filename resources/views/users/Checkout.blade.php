@@ -1,254 +1,209 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<!-- Mirrored from kute-themes.com/html/kuteshop/html/Checkout.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 09 Jun 2020 15:41:23 GMT -->
-@include('users.includes.nav')
-
-<body class="index-opt-1 catalog-product-view catalog-view_op1 page-order">
-
-	<div class="wrapper">
+<!doctype html>
+<html class="no-js" lang="zxx">
 
 
+<!-- Mirrored from demo.hasthemes.com/theface-preview/theface-v3/checkout.blade.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jul 2020 15:41:03 GMT -->
+ @include('users.inc.header')
 
-        @include('users.includes.header');
 
-		<!-- MAIN -->
-		<main class="site-main">
+<body>
 
-            <div class="columns container">
-                <!-- Block  Breadcrumb-->
+    <div id="main-wrapper">
+
+        <!--Header section start-->
+    @include('users.inc.nav')
+        <!--Header section end-->
+
+        <!-- Page Banner Section Start -->
+        <div class="page-banner-section section bg-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
                         
-                <ol class="breadcrumb no-hide">
-                    <li><a href="#">Home    </a></li>
-                    <li class="active"> Checkout</li>
-                </ol><!-- Block  Breadcrumb-->
-
-                <h2 class="page-heading">
-                    <span class="page-heading-title2"> Checkout</span>
-                </h2>
-
-                <div class="page-content checkout-page">
-                    <h3 class="checkout-sep">1. Billing Infomations</h3>
-                    @include('users.includes.alert')
-
-                    <div class="box-border">
-                        <form method="post" action="{{route('checkout')}}">
-                            @csrf
-                        <ul>
-                            <li class="row">
-                                <div class="col-sm-6">
-                                    <label for="first_name" class="required">First Name</label>
-                                    <input class="input form-control" name="first_name" id="first_name" type="text">
-                                </div>
-                                <div class="col-sm-6">
-                                    <label for="last_name" class="required">Last Name</label>
-                                    <input name="last_name" class="input form-control" id="last_name" type="text">
-                                </div>
-                            </li>
-                            <li class="row">
-
-                                <div class="col-sm-6">
-                                    <label for="email_address" class="required">Email Address</label>
-                                    <input class="input form-control" name="email" id="email_address" type="text">
-                                </div>
-                            </li>
-                            <li class="row"> 
-                                <div class="col-xs-12">
-
-                                    <label for="address" class="required">Address</label>
-                                    <input class="input form-control" name="address" id="address" type="text">
-
-                                </div>
-
-                            </li>
-
-                            <li class="row">
-
-                                <div class="col-sm-6">
-                                    <label for="telephone" class="required">Telephone</label>
-                                    <input class="input form-control" name="telephone" id="telephone" type="text">
-                                </div>
-
-                                <div class="col-sm-6">
-                                    
-                                    <label for="city" class="required">City</label>
-                                    <input class="input form-control" name="city" id="city" type="text">
-
-                                </div>
-
-                                <div class="col-sm-6">
-                                    <label class="required">State/Province</label>
-                                    <input class="input form-control" name="state" id="state" type="text">
-                                </div>
-                            </li>
-
-                            <li class="row">
-
-                                <div class="col-sm-6">
-
-                                    <label for="postal_code" class="required">Zip/Postal Code</label>
-                                    <input class="input form-control" name="zip_code" id="postal_code" type="text">
-                                </div>
-
-                                <div class="col-sm-6">
-                                    <label class="required">Country</label>
-                                    <input class="input form-control" name="country" id="country" type="text">
-                                </div>
-                            </li>
-                            <li>
-                                <button class="button" type="submit">Order Now</button>
-                            </li>
-                        </ul>
-                        </form>
-                    </div>
-                    {{--<h3 class="checkout-sep">2. Payment Information</h3>--}}
-                    {{--<div class="box-border">--}}
-                        {{--<ul>--}}
-                            {{--<li>--}}
-                                {{--<label for="radio_button_5"><input checked="" name="radio_4" id="radio_button_5" type="radio"> Check / Money order</label>--}}
-                            {{--</li>--}}
-
-                            {{--<li>--}}
-                    {{----}}
-                                {{--<label for="radio_button_6"><input name="radio_4" id="radio_button_6" type="radio"> Credit card (saved)</label>--}}
-                            {{--</li>--}}
-
-                        {{--</ul>--}}
-                        {{--<button class="button">Continue</button>--}}
-                    {{--</div>--}}
-                    <h3 class="checkout-sep">Order Review</h3>
-                    <div class="box-border">
-                        <div class="table-responsive">
-                            <table class="table table-bordered  cart_summary">
-                                <thead>
-                                <tr>
-                                    <th class="cart_product">Product</th>
-                                    <th>Description</th>
-                                    <th>Avail.</th>
-                                    <th>Unit price</th>
-                                    <th>Total</th>
-                                    <th class="action"><i class="fa fa-trash-o"></i></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                @if (\Darryldecode\Cart\Facades\CartFacade::isEmpty())
-                                    <p class="alert alert-warning">Your shopping cart is empty.</p>
-                                @else
-
-                                    @foreach($items as $item)
-
-                                        <tr>
-                                            <td class="cart_product">
-                                                <a href="#"><img alt="Product" src="/images/{{$item->image}}"></a>
-                                            </td>
-                                            <td class="cart_description">
-                                                <p class="product-name"><a href="#">{{$item->name}}</a></p>
-                                            </td>
-                                            <td class="cart_avail">
-
-                                                @if($item->availability == 0)
-                                                    <span class="label label-danger">Not in stock</span>
-                                                @else
-                                                    <span class="label label-success">In stock</span>
-                                                @endif
-                                            </td>
-
-                                            <td class="price"><span>${{$item->price}}</span></td>
-                                            <td class="price">
-                                                <span>${{$item->price}}</span>
-                                            </td>
-                                            <td class="action">
-                                                <a href="{{url('/deleteItem/'.$item->id)}}">Delete item</a>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                @endif
-                                </tbody>
-                                <tfoot>
-                                <tr>
-                                    <td rowspan="2" colspan="2"></td>
-                                    <td colspan="3"></td>
-                                    <td colspan="2">
-                                        <a href="{{url('/clearCart')}}" class="btn btn-danger">Clear Cart</a>
-                                    </td>                                    </tr>
-                                <tr>
-                                    <td colspan="3"><strong>Total</strong></td>
-                                    <td colspan="2"><strong>${{\Darryldecode\Cart\Facades\CartFacade::getSubTotal()}}</strong></td>
-
-                                </tr>
-
-                                </tfoot>
-                            </table>
-
+                        <div class="page-banner text-center">
+                            <h1>Checkout</h1>
+                            <ul class="page-breadcrumb">
+                                <li><a href="{{url('/')}}">Home</a></li>
+                                <li>Checkout</li>
+                            </ul>
                         </div>
+                        
                     </div>
                 </div>
-
             </div>
+        </div>
+        <!-- Page Banner Section End -->
+
+        <!--Checkout section start-->
+        <div class="checkout-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50  pb-70 pb-lg-50 pb-md-40 pb-sm-30 pb-xs-20">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">    
+                            
+                        <!-- Checkout Form Start-->
+                        <form method="post" action="{{route('checkout')}}" class="checkout-form">
+                            @csrf
+                        <div class="row row-40">
+
+                            <div class="col-lg-7">
+                                <!-- Billing Address -->
+                                <div id="billing-form" class="mb-10">
+                                    <h4 class="checkout-title">Billing Address</h4>
+
+                                    <div class="row">
+
+                                        <div class="col-md-6 col-12 mb-20">
+                                            <label>First Name*</label>
+                                            <input type="text" placeholder="First Name" name="first_name">
+                                        </div>
+
+                                        <div class="col-md-6 col-12 mb-20">
+                                            <label>Last Name*</label>
+                                            <input type="text" placeholder="Last Name" name="last_name">
+                                        </div>
+
+                                        <div class="col-md-6 col-12 mb-20">
+                                            <label>Email Address*</label>
+                                            <input type="email" placeholder="Email Address" name="email">
+                                        </div>
+
+                                        <div class="col-md-6 col-12 mb-20">
+                                            <label>Phone no*</label>
+                                            <input type="text" placeholder="Phone number" name="telephone">
+                                        </div>
+
+                                        <div class="col-12 mb-20">
+                                            <label>Address*</label>
+                                            <input type="text" placeholder="Address" name="address">
+                                        </div>
+
+                                        <div class="col-md-6 col-12 mb-20">
+                                            <label>Country*</label>
+                                            <input type="text" placeholder="Country" name="country">
+                                        </div>
+
+                                        <div class="col-md-6 col-12 mb-20">
+                                            <label>Town/City*</label>
+                                            <input type="text" placeholder="Town/City" name="city">
+                                        </div>
+
+                                        <div class="col-md-6 col-12 mb-20">
+                                            <label>State*</label>
+                                            <input type="text" placeholder="State" name="state">
+                                        </div>
+
+                                        <div class="col-md-6 col-12 mb-20">
+                                            <label>Zip Code / Postal Code*</label>
+                                            <input type="text" placeholder="Zip Code" name="zip_code">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-lg-5">
+                                <div class="row">
+
+                                    <!-- Cart Total -->
+                                    <div class="col-12 mb-60">
+
+                                        <h4 class="checkout-title">Cart Total</h4>
+
+                                        <div class="checkout-cart-total">
+
+                                            <h4>Product <span>Total</span></h4>
+
+                                            <ul>
+                                                @if (\Darryldecode\Cart\Facades\CartFacade::isEmpty())
+                                                    <p class="alert alert-warning">Your shopping cart is empty.</p>
+                                                @else
+
+                                                    @foreach($items as $item)
+                                                        <li>{{$item->name}} X {{$item->quantity}} <span>${{$item->price * $item->quantity}}</span></li>
+
+                                                    @endforeach
+                                                @endif
+                                            </ul>
+
+                                            <p>Sub Total <span>${{\Darryldecode\Cart\Facades\CartFacade::getSubTotal()}}</span></p>
+
+                                            <h4>Grand Total <span>${{\Darryldecode\Cart\Facades\CartFacade::getSubTotal()}}</span></h4>
+
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Payment Method -->
+                                    <div class="col-12 mb-30">
+
+                                        <h4 class="checkout-title">Payment Method</h4>
+
+                                        <div class="checkout-payment-method">
+
+                                            <div class="single-method">
+                                                <input type="radio" id="payment_check" name="payment-method" value="check">
+                                                <label for="payment_check">Check Payment</label>
+                                                <p data-method="check">Please send a Check to Store name with Store Street, Store Town, Store State, Store Postcode, Store Country.</p>
+                                            </div>
+
+                                            <div class="single-method">
+                                                <input type="radio" id="payment_bank" name="payment-method" value="bank">
+                                                <label for="payment_bank">Direct Bank Transfer</label>
+                                                <p data-method="bank">Please send a Check to Store name with Store Street, Store Town, Store State, Store Postcode, Store Country.</p>
+                                            </div>
+
+                                            <div class="single-method">
+                                                <input type="radio" id="payment_cash" name="payment-method" value="cash">
+                                                <label for="payment_cash">Cash on Delivery</label>
+                                                <p data-method="cash">Please send a Check to Store name with Store Street, Store Town, Store State, Store Postcode, Store Country.</p>
+                                            </div>
+
+                                            <div class="single-method">
+                                                <input type="radio" id="payment_paypal" name="payment-method" value="paypal">
+                                                <label for="payment_paypal">Paypal</label>
+                                                <p data-method="paypal">Please send a Check to Store name with Store Street, Store Town, Store State, Store Postcode, Store Country.</p>
+                                            </div>
+
+                                            <div class="single-method">
+                                                <input type="radio" id="payment_payoneer" name="payment-method" value="payoneer">
+                                                <label for="payment_payoneer">Payoneer</label>
+                                                <p data-method="payoneer">Please send a Check to Store name with Store Street, Store Town, Store State, Store Postcode, Store Country.</p>
+                                            </div>
+
+                                            <div class="single-method">
+                                                <input type="checkbox" id="accept_terms">
+                                                <label for="accept_terms">I’ve read and accept the terms & conditions</label>
+                                            </div>
+
+                                        </div>
+
+                                        <button class="place-order btn btn-lg btn-round" type="submit">Place order</button>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        </form> 
+                        
+                    </div>
+                </div>            
+            </div>
+        </div>
 
 
-		</main><!-- end MAIN -->
+    </div>
 
-		<!-- FOOTER -->
-        @include('users.includes.footer')<!-- end FOOTER -->
-		
-        <!--back-to-top  -->
-        <a href="#" class="back-to-top">
-            <i aria-hidden="true" class="fa fa-angle-up"></i>
-        </a>
-        
-	</div>
+    <!-- Placed js at the end of the document so the pages load faster -->
 
-    
-    
+    <!-- All jquery file included here -->
+    @include('users.inc.scripts')
 
-    <!-- jQuery -->    
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-
-    <!-- sticky -->
-    <script type="text/javascript" src="js/jquery.sticky.js"></script>
-
-    <!-- OWL CAROUSEL Slider -->    
-    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
-
-    <!-- Boostrap --> 
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-
-    <!-- Countdown --> 
-    <script type="text/javascript" src="js/jquery.countdown.min.js"></script>
-
-    <!--jquery Bxslider  -->
-    <script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
-    
-    <!-- actual --> 
-    <script type="text/javascript" src="js/jquery.actual.min.js"></script>
-
-    <!-- jQuery UI -->
-    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-    
-    <!-- Chosen jquery-->    
-    <script type="text/javascript" src="js/chosen.jquery.min.js"></script>
-    
-    <!-- parallax jquery--> 
-    <script type="text/javascript" src="js/jquery.parallax-1.1.3.js"></script>
-
-    <!-- elevatezoom --> 
-    <script type="text/javascript" src="js/jquery.elevateZoom.min.js"></script>
-
-    <!-- fancybox -->
-    <script src="js/fancybox/source/jquery.fancybox.pack.js"></script>
-    <script src="js/fancybox/source/helpers/jquery.fancybox-media.js"></script>
-    <script src="js/fancybox/source/helpers/jquery.fancybox-thumbs.js"></script>
-
-    <!-- arcticmodal -->
-    <script src="js/arcticmodal/jquery.arcticmodal.js"></script>
-    
-    <!-- Main -->  
-    <script type="text/javascript" src="js/main.js"></script>
-
-    <!-- Custom scripts -->
 
 </body>
 
-<!-- Mirrored from kute-themes.com/html/kuteshop/html/Checkout.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 09 Jun 2020 15:41:26 GMT -->
+
+<!-- Mirrored from demo.hasthemes.com/theface-preview/theface-v3/checkout.blade.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jul 2020 15:41:03 GMT -->
 </html>

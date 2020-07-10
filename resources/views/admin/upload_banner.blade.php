@@ -43,21 +43,21 @@
                                             <label for="exampleInputTitle">Title</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="ti-text"></i></div>
-                                                <input type="text" class="form-control" id="exampleInputTitle1" placeholder="Text1" name="subtitle">
+                                                <input type="text" class="form-control" id="exampleInputTitle1" placeholder="Title" name="title">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputTitle">SubTitle</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="ti-text"></i></div>
-                                                <input type="text" class="form-control" id="exampleInputTitle1" placeholder="Text1" name="title">
+                                                <input type="text" class="form-control" id="exampleInputTitle1" placeholder="SubTitle" name="subtitle">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputTitle">Description</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="ti-text"></i></div>
-                                                <input type="text" class="form-control" id="exampleInputTitle1" placeholder="Text1" name="description">
+                                                <input type="text" class="form-control" id="exampleInputTitle1" placeholder="Description" name="description">
                                             </div>
                                         </div>
 

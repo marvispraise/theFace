@@ -35,6 +35,9 @@
                                     <thead>
                                         <tr>
                                             <th>S/N</th>
+                                            <th>Text1</th>
+                                            <th>Text2</th>
+                                            <th>Text3</th>
                                             <th>Image</th>
                                             <th>Actions</th>
                                         </tr>
@@ -44,6 +47,9 @@
                                     @foreach($banners as $banner)
                                         <tr>
                                             <td>{{$x++}}</td>
+                                            <td>{{$banner->text1}}</td>
+                                            <td>{{$banner->text2}}</td>
+                                            <td>{{$banner->text3}}</td>
 
                                             <td><img src="/images/{{$banner->image}}" alt="banner" style="height: 50px; width: 50px;"/></td>
                                             <td><a href="{{url('edit_index/'.$banner->id)}}"><span class="label label-rouded label-warning"> Edit</span></a> || <a href="{{ url('deleteIndex/'.$banner->id) }}"> <span class="label label-rounded label-danger">Delete</span></a></td>

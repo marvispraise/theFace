@@ -37,9 +37,7 @@
                                             <th>S/N</th>
                                             <th>Name</th>
                                             <th>Price</th>
-                                            <th>Special Product</th>
                                             <th>Discount</th>
-                                            <th>Hot_deal</th>
                                             <th>Availability</th>
                                             <th>Category</th>
                                             <th>image</th>
@@ -53,23 +51,9 @@
                                             <td>{{$x++}}</td>
                                             <td>{{$product->name}}</td>
                                             <td>{{$product->price}}</td>
-                                            <td>
-                                                @if($product->special_product === 0)
-                                                    <span class="label label-rounded label-danger">No</span>
-                                                    @else
-                                                    <span class="label label-rounded label-success">Yes</span>
-                                                @endif
-                                            </td>
                                             <td>{{$product->discount}}</td>
                                             <td>
-                                                @if($product->hot_deal === 0)
-                                                    <span class="label label-rounded label-danger">No</span>
-                                                @else
-                                                    <span class="label label-rounded label-success">Yes</span>
-                                                @endif
-                                            </td>
-                                            <td>
-                                                @if($product->availability === 0)
+                                                @if($product->availability == 1)
                                                     In stock
                                                 @else
                                                     Not in stock

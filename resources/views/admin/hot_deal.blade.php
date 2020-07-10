@@ -6,22 +6,18 @@
 @include("admin.includes.header");
 
 <body class="fix-sidebar">
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="cssload-speeding-wheel"></div>
-    </div>
     @include("admin.includes.nav");
 
     <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Banner</h4>
+                        <h4 class="page-title">Hot Deal Products</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <ol class="breadcrumb">
                             <li><a href="#">Dashboard</a></li>
-                            <li class="active">Banner</li>
+                            <li class="active">Hot Deal Products</li>
                         </ol>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -32,38 +28,45 @@
                     <div class="col-md-3"></div>
                     <div class="col-md-6">
                         <div class="white-box">
-                            <h3 class="box-title m-b-0">Index Banner</h3>
-                            <p class="text-muted m-b-30 font-13"> Upload Index Banner</p>
+                            <h3 class="box-title m-b-0">Hot Deal Products</h3>
+                            <p class="text-muted m-b-30 font-13"> Hot Deal Products</p>
                             <div class="row">
                                 <div class="col-sm-12 col-xs-12">
-                                    <form method="post" action="{{ route('image') }}" enctype="multipart/form-data">
+                                    <form method="post" action="{{ route('saveHotDeal') }}" enctype="multipart/form-data">
                                         @csrf
-                                        <div class="form-group">
-                                            <label for="exampleInputImage">Text1</label>
+
+                                        {{--<h5 class="m-t-20">Product</h5>--}}
+                                            <label for="exampleInputImage">Product</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="ti-text"></i></div>
-                                                <input type="text" class="form-control" id="exampleInputImage" name="text1">
+                                                <input type="text" class="form-control" id="product" name="product" placeholder="Search Product">
+                                                {{--<select class="form-control select2" name="product">--}}
+                                                    {{--<option disabled selected>Select . . .</option>--}}
+                                                    {{--@if(count($products) > 0)--}}
+                                                        {{--@foreach($products as $product)--}}
+                                                        {{--<option value="{{$product->unique_id}}">{{$product->name}}</option>--}}
+                                                        {{--@endforeach--}}
+                                                        {{--@else--}}
+                                                        {{--<h3>No Products Found</h3>--}}
+                                                     {{--@endif--}}
+                                                {{--</select>--}}
+
+                                            </div>
+                                        <div id="white-box"></div>
+
+
+                                        <div class="form-group">
+                                            <label for="exampleInputImage">Start Date</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="ti-text"></i></div>
+                                                <input type="text" class="form-control complex-colorpicker" id="datepicker" name="start_date" placeholder="mm/dd/yy" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputImage">Text2</label>
+                                            <label for="exampleInputImage">End Date</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="ti-text"></i></div>
-                                                <input type="text" class="form-control" id="exampleInputImage" name="text2">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputImage">Text3</label>
-                                            <div class="input-group">
-                                                <div class="input-group-addon"><i class="ti-text"></i></div>
-                                                <input type="text" class="form-control" id="exampleInputImage" name="text3">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputImage">Upload Image</label>
-                                            <div class="input-group">
-                                                <div class="input-group-addon"><i class="ti-image"></i></div>
-                                                <input type="file" class="form-control" id="exampleInputImage" name="image">
+                                                <input type="text" class="form-control" id="datepicker" name="end_date" placeholder="mm/dd/yy" autocomplete="off">
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-success btn-rounded btn-outline btn-block">
@@ -77,15 +80,48 @@
                     <div class="col-md-3">
                     </div>
             </div>
-            <!-- /.container-fluid -->
         @include("admin.includes.footer");
         </div>
-        <!-- /#page-wrapper -->
     </div>
-    <!-- /#wrapper -->
-    <!-- jQuery -->
-    @include("admin.includes.footer2");
 
+    @include("admin.includes.footer2");
+    <script>
+        jQuery(document).ready(function() {
+            $(".select2").select2();
+            $('.selectpicker').selectpicker();
+
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#product').on('keyup',function() {
+                var query = $(this).val();
+                $.ajax({
+
+                    url:"{{ route('searchP') }}",
+
+                    type:"GET",
+
+                    data:{'product':query},
+
+                    success:function (data) {
+
+                        $('#white-box').html(data);
+                    }
+                })
+                // end of ajax call
+            });
+
+
+            $(document).on('click', 'li', function(){
+
+                var value = $(this).text();
+                $('#product').val(value);
+                $('#white-box').html("");
+            });
+        });
+    </script>
 
 </body>
 

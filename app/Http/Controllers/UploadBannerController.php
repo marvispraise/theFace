@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Ad_Banner;
 use App\AdBanner;
+use App\Blog;
 use App\Category;
 use App\OrderItem;
 use App\Product;
@@ -13,6 +14,7 @@ use App\Upload_Section_Product_Image;
 use function GuzzleHttp\Promise\all;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Webpatser\Uuid\Uuid;
 
 class UploadBannerController extends Controller
 {
@@ -85,14 +87,16 @@ class UploadBannerController extends Controller
             'subtitle' => 'required',
             'title' => 'required',
             'description' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $cat = Upload_Banner::find($id);
-        $imageName = time(). '.' . request()->image->getClientOriginalExtension();
-        request()->image->move(public_path('images'), $imageName);
+        if($request->has("image")){
 
-        $cat->image     = $imageName;
+            $imageName = time(). '.' . request()->image->getClientOriginalExtension();
+            request()->image->move(public_path('images'), $imageName);
+            $cat->image       = $imageName;
+
+        }
         $cat->subtitle     = $request->get('subtitle');
         $cat->title     = $request->get('title');
         $cat->description     = $request->get('description');
@@ -113,7 +117,7 @@ class UploadBannerController extends Controller
             ->with('success','Successfully deleted.');
     }
 
-    /////////////////////////
+    ///////////////////////////////////////
     ///
     public function view(){
         return view('admin/upload_index_banner');
@@ -121,6 +125,9 @@ class UploadBannerController extends Controller
 
     public function imageUpload(Request $request){
         request()->validate([
+            'text1' => 'required',
+            'text2' => 'required',
+            'text3' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
@@ -130,6 +137,9 @@ class UploadBannerController extends Controller
         request()->image->move(public_path('images'), $imageName);
 
         $image_upload->image     = $imageName;
+        $image_upload->text1     = $request->get('text1');
+        $image_upload->text2     = $request->get('text2');
+        $image_upload->text3     = $request->get('text3');
         $image_upload->save();
         return back()
             ->with('success','You have successfully uploaded the image.');
@@ -149,14 +159,23 @@ class UploadBannerController extends Controller
 
     public function editIndex($id, Request $request) {
         request()->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'text1' => 'required',
+            'text2' => 'required',
+            'text3' => 'required',
         ]);
 
         $cat = Upload_index_Banner::find($id);
-        $imageName = time(). '.' . request()->image->getClientOriginalExtension();
-        request()->image->move(public_path('images'), $imageName);
+        if($request->has("image")){
 
-        $cat->image     = $imageName;
+            $imageName = time(). '.' . request()->image->getClientOriginalExtension();
+            request()->image->move(public_path('images'), $imageName);
+            $cat->image       = $imageName;
+
+        }
+
+        $cat->text1     = $request->get('text1');
+        $cat->text2     = $request->get('text2');
+        $cat->text3     = $request->get('text3');
         $cat->save();
 
         return redirect()->route('list_index')
@@ -173,15 +192,18 @@ class UploadBannerController extends Controller
     }
 
 
-    ///////////////////////////////
+    /////////////////////////////////////////////
     ///
     public function viewSection(){
-        return view('admin/upload_section_product');
+        return view('admin.upload_blog_post');
     }
 
     public function storeSectionImage(Request $request)
     {
         request()->validate([
+            'title' => 'required',
+            'category' => 'required',
+            'content' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 
         ]);
@@ -189,8 +211,12 @@ class UploadBannerController extends Controller
         $imageName = time(). '.' . request()->image->getClientOriginalExtension();
         request()->image->move(public_path('images'), $imageName);
 
-        $store = new AdBanner();
-        $store->image               = $imageName;
+        $store = new Blog();
+        $store->img               = $imageName;
+        $store->unique_id               = Uuid::generate();
+        $store->title               = $request->get('title');
+        $store->category               = $request->get('category');
+        $store->content               = $request->get('content');
 
         $store->save();
 
@@ -199,39 +225,47 @@ class UploadBannerController extends Controller
     }
 
     public function list_section(){
-        $banners = AdBanner::all();
-        return view('admin/list_section', ['banners' => $banners]);
+        $banners = Blog::all();
+        return view('admin/list_blog', ['banners' => $banners]);
     }
 
     public function edit_section($id){
 
-        $banner = AdBanner::find($id);
+        $banner = Blog::find($id);
 
-        return view('admin/edit_section_product', ['banner' => $banner]);
+        return view('admin.edit_blog', ['banner' => $banner]);
     }
 
     public function editSection($id, Request $request) {
         request()->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'title' => 'required',
+            'category' => 'required',
+            'content' => 'required',
         ]);
 
-        $cat = AdBanner::find($id);
-        $imageName = time(). '.' . request()->image->getClientOriginalExtension();
-        request()->image->move(public_path('images'), $imageName);
+        $cat = Blog::find($id);
+        if($request->has("image")){
 
-        $cat->image     = $imageName;
+            $imageName = time(). '.' . request()->image->getClientOriginalExtension();
+            request()->image->move(public_path('images'), $imageName);
+            $cat->image       = $imageName;
+
+        }
+        $cat->title     = $request->get('title');
+        $cat->category   = $request->get('category');
+        $cat->content      = $request->get('content');
         $cat->save();
 
-        return redirect()->route('list_section')
+        return redirect()->route('list_blog')
             ->with('success','Successfully updated.');
     }
 
     public function deleteSection($id) {
-        $cat = AdBanner::find($id);
+        $cat = Blog::find($id);
         $cat->delete();
 
 
-        return redirect()->route('list_section')
+        return redirect()->route('list_blog')
             ->with('success','Successfully deleted.');
     }
 

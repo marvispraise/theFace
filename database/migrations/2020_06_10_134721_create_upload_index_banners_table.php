@@ -15,6 +15,9 @@ class CreateUploadIndexBannersTable extends Migration
     {
         Schema::create('upload_index_banners', function (Blueprint $table) {
             $table->id();
+            $table->string('text1');
+            $table->string('text2');
+            $table->string('text3');
             $table->string('image');
             $table->timestamps();
         });

@@ -15,8 +15,8 @@ class CreateUploadBannersTable extends Migration
     {
         Schema::create('upload_banners', function (Blueprint $table) {
             $table->id();
-            $table->string('subtitle');
             $table->string('title');
+            $table->string('subtitle');
             $table->string('description');
             $table->string('image');
             $table->timestamps();

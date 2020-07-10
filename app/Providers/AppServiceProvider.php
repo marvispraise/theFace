@@ -30,16 +30,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-       // dd(CartFacade::getContent()->count());
         Schema::defaultStringLength(191);
         $hCategories = Category::all();
 
         View::share(['hCategories'=> $hCategories]);
-        View::composer('users.includes.header', function ($view) {
+        View::composer('users.inc.nav', function ($view) {
 
             $cart_price = 0;
 
-            //dd(Session::get('1_cart_items'));
 
             if (!empty(Session::get('1_cart_items'))){
 
@@ -59,7 +57,6 @@ class AppServiceProvider extends ServiceProvider
 
             $cart_items = Session::get('1_cart_items');
 
-           // echo $cart_price;;
 
             $view->with(['cartCount'=> $cart_count,'cart_items'=> $cart_items,'total_price'=>$cart_price]);
         });

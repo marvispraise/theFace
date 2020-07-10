@@ -39,6 +39,27 @@
                                     <form method="post" action="{{ route('image') }}" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
+                                            <label for="exampleInputImage">Text1</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="ti-text"></i></div>
+                                                <input type="text" class="form-control" id="exampleInputImage" name="text1">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputImage">Text2</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="ti-text"></i></div>
+                                                <input type="text" class="form-control" id="exampleInputImage" name="text2">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputImage">Text3</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="ti-text"></i></div>
+                                                <input type="text" class="form-control" id="exampleInputImage" name="text3">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
                                             <label for="exampleInputImage">Upload Image</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="ti-image"></i></div>

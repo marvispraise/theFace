@@ -40,9 +40,30 @@
                                         @csrf
 
                                         <div class="form-group">
+                                            <label for="exampleInputImage">Title</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="ti-text"></i></div>
+                                                <input type="text" class="form-control" id="exampleInputImage" name="title" value="{{$banner->title}}">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputImage"> Category</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="ti-text"></i></div>
+                                                <input type="text" class="form-control" id="exampleInputImage" name="category" value="{{$banner->category}}">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputImage">Content</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="ti-text"></i></div>
+                                                <textarea class="form-control" id="exampleInputImage" name="content" rows="6" >{!! nl2br(e($banner->content)) !!}</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
                                             <label for="exampleInputImage">Upload Image</label>
                                             <div class="white-box">
-                                                <img src="/images/{{$banner->image}}" alt="banner" style="height: 100px; width: 100px;"/>
+                                                <img src="/images/{{$banner->img}}" alt="banner" style="height: 100px; width: 100px;"/>
                                             </div>
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="ti-image"></i></div>

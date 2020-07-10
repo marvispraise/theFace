@@ -1,105 +1,120 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<!-- Mirrored from kute-themes.com/html/kuteshop/html/Contact.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 09 Jun 2020 15:40:49 GMT -->
-@include('users.includes.nav')
-
-<body class="index-opt-1 catalog-product-view catalog-view_op1 page-contact">
-
-	<div class="wrapper">
+<!doctype html>
+<html class="no-js" lang="zxx">
 
 
+<!-- Mirrored from demo.hasthemes.com/theface-preview/theface-v3/contact.blade.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jul 2020 15:41:24 GMT -->
+@include('users.inc.header')
 
-        @include('users.includes.header');
 
-		<!-- MAIN -->
-		<main class="site-main">
+<body>
 
-            <div class="columns container">
-                <!-- Block  Breadcrumb-->
+    <div id="main-wrapper">
+
+        <!--Header section start-->
+    @include('users.inc.nav')
+        <!--Header section end-->
+
+        <!-- Page Banner Section Start -->
+        <div class="page-banner-section section bg-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
                         
-                <ol class="breadcrumb no-hide">
-                    <li><a href="#">Home    </a></li>
-                    <li class="active">Contact</li>
-                </ol><!-- Block  Breadcrumb-->
-
-                <h2 class="page-heading">
-                    <span class="page-heading-title2">Contact Us</span>
-                </h2>
-
-                <div class="page-content" id="contact">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <h3 class="page-subheading">CONTACT FORM</h3>
-                            <div class="contact-form-box">
-                                <div class="form-selector">
-                                    <label>Subject Heading</label>
-                                    <select id="subject" class="form-control input-sm">
-                                        <option value="Customer service">Customer service</option>
-                                        <option value="Webmaster">Webmaster</option>
-                                    </select>
-                                </div>
-                                <div class="form-selector">
-                                    <label>Email address</label>
-                                    <input type="text" id="email" class="form-control input-sm">
-                                </div>
-                                <div class="form-selector">
-                                    <label>Order reference</label>
-                                    <input type="text" id="order_reference" class="form-control input-sm">
-                                </div>
-                                <div class="form-selector">
-                                    <label>Message</label>
-                                    <textarea id="message" rows="10" class="form-control input-sm"></textarea>
-                                </div>
-                                <div class="form-selector">
-                                    <button class="btn" id="btn-send-contact">Send</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="contact_form_map" class="col-xs-12 col-sm-6">
-                            <h3 class="page-subheading">Information</h3>
-                            <p>Lorem ipsum dolor sit amet onsectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor dapibus eget. Mauris tincidunt aliquam lectus sed vestibulum. Vestibulum bibendum suscipit mattis.</p>
-                            <br>
-                            <ul>
-                                <li>Praesent nec tincidunt turpis.</li>
-                                <li>Aliquam et nisi risus.&nbsp;Cras ut varius ante.</li>
-                                <li>Ut congue gravida dolor, vitae viverra dolor.</li>
+                        <div class="page-banner text-center">
+                            <h1>Contact</h1>
+                            <ul class="page-breadcrumb">
+                                <li><a href="{{url('/')}}">Home</a></li>
+                                <li>Contact</li>
                             </ul>
-                            <br>
-                            <ul class="store_info">
-                                <li><i class="fa fa-home"></i>Our business address is 1063 Freelon Street San Francisco, CA 95108</li>
-                                <li><i class="fa fa-phone"></i><span>+ 021.343.7575</span></li>
-                                <li><i class="fa fa-phone"></i><span>+ 020.566.6666</span></li>
-                                <li><i class="fa fa-envelope"></i>Email: <span><a href="mailto:%73%75%70%70%6f%72%74@%6b%75%74%65%74%68%65%6d%65.%63%6f%6d">support@kutetheme.com</a></span></li>
-                            </ul>                
-                            </div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
+        </div>
+        <!-- Page Banner Section End -->
+        <!--Contact section start-->
+        <div class="conact-section section pt-95 pt-lg-75 pt-md-65 pt-sm-55 pt-xs-45  pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
+            <div class="container">
+               
+                <div class="row">
+                    <div class="col-lg-3 col-12">
+                        <div class="contact-information">
+                            <h3>Contact Information</h3>
+                            <ul>
+                                <li>
+                                    <span class="icon"><i class="pe-7s-map"></i></span>
+                                    <span class="text"><span>Stock Building, 125 Main Street 1st Lane, San Francisco, USA</span></span>
+                                </li>
+                                <li>
+                                    <span class="icon"><i class="pe-7s-call"></i></span>
+                                    <span class="text"><a href="#">(001) 24568 365 987)</a><a href="#">(001) 65897 569 784)</a></span>
+                                </li>
+                                <li>
+                                    <span class="icon"><i class="pe-7s-mail-open"></i></span>
+                                    <span class="text"><a href="#">infor@example.com</a><a href="#">www.example.com</a></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-12">
+                        <div class="contact-form-wrap">
+                            <h3 class="contact-title">Drop us a line</h3>
+                            <form id="contact-form" action="http://hasthemes.com/file/mail.php" method="post">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="contact-form-style mb-20">
+                                            <input name="con_name" placeholder="First Name*" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="contact-form-style mb-20">
+                                            <input name="lastname" placeholder="Last Name*" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="contact-form-style mb-20">
+                                            <input name="con_email" placeholder="Email*" type="email">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="contact-form-style mb-20">
+                                            <input name="subject" placeholder="Subject*" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="contact-form-style">
+                                            <textarea name="con_message" placeholder="Type your message here.."></textarea>
+                                            <button class="btn" type="submit"><span>Send message</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <p class="form-messege"></p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!--Contact section end-->
 
+        <!--Footer section start-->
+    @include('users.inc.footer')
 
-		</main><!-- end MAIN -->
+    <!--Footer section end-->
 
-        <!-- FOOTER -->
-        @include('users.includes.footer');
-
-
-        <!--back-to-top  -->
-        <a href="#" class="back-to-top">
-            <i aria-hidden="true" class="fa fa-angle-up"></i>
-        </a>
 
     </div>
 
+    <!-- Placed js at the end of the document so the pages load faster -->
 
+    <!-- All jquery file included here -->
+    @include('users.inc.scripts')
 
-
-    <!-- jQuery -->
-    @include('users.includes.scripts');
-
-    <!-- Custom scripts -->
 
 </body>
 
-<!-- Mirrored from kute-themes.com/html/kuteshop/html/Contact.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 09 Jun 2020 15:40:49 GMT -->
+
+<!-- Mirrored from demo.hasthemes.com/theface-preview/theface-v3/contact.blade.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jul 2020 15:41:24 GMT -->
 </html>

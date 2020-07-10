@@ -31,24 +31,24 @@
                             <!-- .col -->
                             <div class="col-md-3 col-sm-12">
                                 <div class="white-box text-center bg-megna">
-                                    <h1 class="text-white counter">165</h1>
-                                    <p class="text-white">Students</p>
+                                    <h1 class="text-white counter">44</h1>
+                                    <p class="text-white">Products</p>
                                 </div>
                             </div>
                             <!-- /.col -->
                             <!-- .col -->
                             <div class="col-md-3 col-sm-12">
                                 <div class="white-box text-center bg-inverse">
-                                    <h1 class="text-white counter">2065</h1>
-                                    <p class="text-white">Courses</p>
+                                    <h1 class="text-white counter">44</h1>
+                                    <p class="text-white">Special Products</p>
                                 </div>
                             </div>
                             <!-- /.col -->
                             <!-- .col -->
                             <div class="col-md-3 col-sm-12">
                                 <div class="white-box text-center bg-info">
-                                    <h1 class="counter text-white">465</h1>
-                                    <p class="text-white">Tutors</p>
+                                    <h1 class="counter text-white">44</h1>
+                                    <p class="text-white">Orders</p>
                                 </div>
                             </div>
                             <!-- /.col -->

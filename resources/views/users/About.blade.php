@@ -1,204 +1,157 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<!-- Mirrored from kute-themes.com/html/kuteshop/html/About.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 09 Jun 2020 15:40:41 GMT -->
-@include('users.includes.nav')
-
-<body class="index-opt-1 catalog-category-view catalog-view_op1">
-
-<div class="wrapper">
+<!doctype html>
+<html class="no-js" lang="zxx">
 
 
-    @include('users.includes.header');
+<!-- Mirrored from demo.hasthemes.com/theface-preview/theface-v3/about.blade.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jul 2020 15:41:07 GMT -->
+@include('users.inc.header')
 
-    <!-- MAIN -->
-    <main class="site-main">
+<body>
 
-        <div class="columns container">
-            <!-- Block  Breadcrumb-->
+    <div id="main-wrapper">
 
-            <ol class="breadcrumb no-hide">
-                <li><a href="#">Home </a></li>
-                <li class="active">About Us</li>
-            </ol><!-- Block  Breadcrumb-->
+        <!--Header section start-->
+    @include('users.inc.nav')
+        <!--Header section end-->
 
-            <div class="row">
-
-                <!-- Main Content -->
-                <div class="col-md-9 col-md-push-3   col-main">
-                    <h2 class="page-heading">
-                        <span class="page-heading-title2">About Us</span>
-                    </h2>
-
-                    <div class="content-text clearfix">
-
-                        <img width="310" alt="" class="alignleft" src="images/media/detail/about-us.jpg">
-
-                        <p>Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et
-                            urna. Aliquam erat volutpat. Duis ac turpis. Donec sit amet eros. Lorem ipsum dolor sit
-                            amet, consecvtetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo.
-                            Ut tellus dolor, dapibus eget, elementum vel.</p>
-
-                        <p>Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu
-                            lacus. Vestibulum libero nisl, porta vel, scelerisque eget, malesuada at, neque. Vivamus
-                            eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros.</p>
-
-                        <p>Integer rutrum ante eu lacus.Vestibulum libero nisl, porta vel, scelerisque eget, <a
-                                href="#">malesuada at</a>, neque. Vivamus eget nibh. Etiam cursus leo vel metus. Nulla
-                            facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-                            posuere cubilia Curae; Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec augue.
-                        </p>
-
-                        <p>Nam elit agna,endrerit sit amet, tincidunt ac, viverra sed, nulla. Donec porta diam eu massa.
-                            Quisque diam lorem, interdum vitae,dapibus ac, scelerisque vitae, pede. Donec eget tellus
-                            non erat lacinia fermentum. Donec in velit vel ipsum auctor pulvinar. Vestibulum iaculis
-                            lacinia est. Proin dictum elementum velit. Fusce euismod consequat ante. Lorem ipsum dolor
-                            sit amet, consectetuer adipiscing elit. Pellentesque sed dolor. Aliquam congue fermentum
-                            nisl. </p>
-                        <p>Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu
-                            lacus. Vestibulum libero nisl, porta vel, scelerisque eget, malesuada at, neque. Vivamus
-                            eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros.</p>
-
-                        <p>Integer rutrum ante eu lacus.Vestibulum libero nisl, porta vel, scelerisque eget, <a
-                                href="#">malesuada at</a>, neque. Vivamus eget nibh. Etiam cursus leo vel metus. Nulla
-                            facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-                            posuere cubilia Curae; Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec augue.
-                        </p>
-
-                    </div>
-
-                </div><!-- Main Content -->
-
-                <!-- Sidebar -->
-                <div class="col-md-3 col-md-pull-9   col-sidebar">
-
-                    <!-- Block  bestseller products-->
-                    <div class="block-sidebar block-sidebar-categorie">
-                        <div class="block-title">
-                            <strong>PRODUCT TYPES</strong>
-                        </div>
-                        <div class="block-content">
-                            <ul class="items">
-                                <li class="parent">
-                                    <a href="#">Dress</a>
-                                    <span class="toggle-submenu"></span>
-                                    <ul class="subcategory">
-                                        <li>
-                                            <a href="#">subcategory 1</a>
-
-                                        </li>
-                                        <li><a href="#">subcategory 1</a></li>
-                                        <li><a href="#">subcategory 1</a></li>
-                                        <li><a href="#">subcategory 1</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Bags</a>
-                                </li>
-                                <li class="parent">
-                                    <a href="#">Cost &amp; Jackets</a>
-                                    <span class="toggle-submenu"></span>
-                                    <ul class="subcategory">
-                                        <li><a href="#">subcategory 1</a></li>
-                                        <li><a href="#">subcategory 1</a></li>
-                                        <li><a href="#">subcategory 1</a></li>
-                                        <li><a href="#">subcategory 1</a></li>
-                                    </ul>
-                                </li>
-                                <li class="parent">
-                                    <a href="#">Beauty</a>
-                                    <span class="toggle-submenu"></span>
-                                    <ul class="subcategory">
-                                        <li><a href="#">subcategory 1</a></li>
-                                        <li><a href="#">subcategory 1</a></li>
-                                        <li><a href="#">subcategory 1</a></li>
-                                        <li><a href="#">subcategory 1</a></li>
-                                    </ul>
-                                </li>
-                                <li class="parent">
-                                    <a href="#">Jewellery</a>
-                                    <span class="toggle-submenu"></span>
-                                    <ul class="subcategory">
-                                        <li><a href="#">subcategory 1</a></li>
-                                        <li><a href="#">subcategory 1</a></li>
-                                        <li><a href="#">subcategory 1</a></li>
-                                        <li><a href="#">subcategory 1</a></li>
-                                    </ul>
-                                </li>
-                                <li class="parent">
-                                    <a href="#">Nightwear</a>
-                                    <span class="toggle-submenu"></span>
-                                    <ul class="subcategory">
-                                        <li><a href="#">subcategory 1</a></li>
-                                        <li><a href="#">subcategory 1</a></li>
-                                        <li><a href="#">subcategory 1</a></li>
-                                        <li><a href="#">subcategory 1</a></li>
-                                    </ul>
-                                </li>
-                                <li class="parent">
-                                    <a href="#">Jumpers &amp; Cardigans</a>
-                                    <span class="toggle-submenu"></span>
-                                    <ul class="subcategory">
-                                        <li><a href="#">subcategory 1</a></li>
-                                        <li><a href="#">subcategory 1</a></li>
-                                        <li><a href="#">subcategory 1</a></li>
-                                        <li><a href="#">subcategory 1</a></li>
-                                    </ul>
-                                </li>
+        <!-- Page Banner Section Start -->
+        <div class="page-banner-section section bg-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        
+                        <div class="page-banner text-center">
+                            <h1>About</h1>
+                            <ul class="page-breadcrumb">
+                                <li><a href="index.html">Home</a></li>
+                                <li>About</li>
                             </ul>
                         </div>
-                    </div><!-- Block  bestseller products-->
-
-
-                    <!-- block slide top -->
-                    <div class="block-sidebar block-banner-sidebar">
-                        <div class="owl-carousel"
-                             data-nav="false"
-                             data-dots="true"
-                             data-margin="0"
-                             data-items='1'
-                             data-autoplayTimeout="700"
-                             data-autoplay="true"
-                             data-loop="true">
-                            <div class="item item1">
-                                <img src="images/media/banner-sidebar1.jpg" alt="images">
-                            </div>
-                            <div class="item item2">
-                                <img src="images/media/banner-sidebar1.jpg" alt="images">
-                            </div>
-                            <div class="item item3">
-                                <img src="images/media/banner-sidebar1.jpg" alt="images">
-                            </div>
-                        </div>
-                    </div><!-- block slide top -->
-
-
-                </div><!-- Sidebar -->
-
-
+                        
+                    </div>
+                </div>
             </div>
         </div>
+        <!-- Page Banner Section End -->
+
+        <!--About Us Area Start-->
+        <div class="about-us-area section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-12">
+                        <!--About Us Image Start-->
+                        <div class="about-us-img-wrapper mb-30 mb-xs-15">
+                            <div class="about-us-image img-full">
+                                <a href="#"><img src="assets/images/about/about-1.jpg" alt=""></a>
+                            </div>
+                        </div>
+                        <!--About Us Image End-->
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <!--About Us Content Start-->
+                        <div class="about-us-content">
+                            <h2>Our company</h2>
+                            <p class="mb-20">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
+                            <p class="mb-20">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo volup.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu nisi ac mi malesuada vestibulum. Phasellus tempor nunc eleifend cursus molestie. Mauris lectus arcu, pellentesque at sodales sit amet, condimentum id nunc. Donec ornare mattis suscipit. Praesent fermentum accumsan vulputate.</p>
+                            <a href="#" class="btn">read more</a>
+                        </div>
+                        <!--About Us Content End-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--About Us Area End-->
+
+        <!--About Us Team Start-->
+        <div class="about-us-team-area section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-70 pb-lg-50 pb-md-40 pb-sm-30 pb-xs-20">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="section-title text-center mb-40 mb-xs-20">
+                            <h2>our <span>exclusive</span> team</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <!--Single Team Start-->
+                        <div class="single-team mb-30">
+                            <div class="team-image img-full">
+                                <a href="#"><img src="assets/images/team/team-1.jpg" alt=""></a>
+                            </div>
+                            <div class="team-content">
+                                <div class="team-hover-info">
+                                    <h2><a href="#">Marcos Alonso</a></h2>
+                                    <ul class="team-social">
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Single Team End-->
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <!--Single Team Start-->
+                        <div class="single-team mb-30">
+                            <div class="team-image img-full">
+                                <a href="#"><img src="assets/images/team/team-2.jpg" alt=""></a>
+                            </div>
+                            <div class="team-content">
+                                <div class="team-hover-info">
+                                    <h2><a href="#">Isaac Newton</a></h2>
+                                    <ul class="team-social">
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Single Team End-->
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <!--Single Team Start-->
+                        <div class="single-team mb-30">
+                            <div class="team-image img-full">
+                                <a href="#"><img src="assets/images/team/team-3.jpg" alt=""></a>
+                            </div>
+                            <div class="team-content">
+                                <div class="team-hover-info">
+                                    <h2><a href="#">Charlotte Taylor</a></h2>
+                                    <ul class="team-social">
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Single Team End-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--About Us Team End-->
+        <!--Footer section start-->
+    @include('users.inc.footer')
+        <!--Footer section end-->
 
 
-    </main><!-- end MAIN -->
+    </div>
 
-    <!-- FOOTER -->
-    @include('users.includes.footer');
+    <!-- Placed js at the end of the document so the pages load faster -->
 
+    <!-- All jquery file included here -->
+    @include('users.inc.scripts')
 
-    <!--back-to-top  -->
-    <a href="#" class="back-to-top">
-        <i aria-hidden="true" class="fa fa-angle-up"></i>
-    </a>
-
-</div>
-
-
-
-
-<!-- jQuery -->
-@include('users.includes.scripts');
 </body>
 
-<!-- Mirrored from kute-themes.com/html/kuteshop/html/About.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 09 Jun 2020 15:40:42 GMT -->
+
+<!-- Mirrored from demo.hasthemes.com/theface-preview/theface-v3/about.blade.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jul 2020 15:41:24 GMT -->
 </html>

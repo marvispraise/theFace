@@ -4,7 +4,7 @@
         <div class="navbar-header">
             <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
             <div class="top-left-part">
-                <a class="logo" href="index.php">
+                <a class="logo" href="{{url('/')}}">
                     <b>
                         <!--This is dark logo icon--><img src="../plugins/images/pixeladmin-logo.png" alt="home" class="dark-logo" /><!--This is light logo icon--><img src="../plugins/images/pixeladmin-logo-dark.png" alt="home" class="light-logo" />
                     </b>
@@ -50,6 +50,7 @@
                     <ul class="nav nav-second-level">
                         <li><a href="{{ url('/list_product') }}">All Products</a></li>
                         <li><a href="{{ url('/product') }}">Add Product</a></li>
+                        <li><a href="{{ url('/hotDeal') }}">Add Hot Deal Product</a></li>
                     </ul>
                 </li>
 
@@ -82,10 +83,10 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#" class="waves-effect"><i data-icon="]" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Section Image<span class="fa arrow"></span></span></a>
+                    <a href="#" class="waves-effect"><i data-icon="]" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Blog Post<span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level">
-                        <li><a href="{{ url('/list_section') }}">All Ad Banners</a></li>
-                        <li><a href="{{ url('/section_image') }}">Add Ad_Banner Image</a></li>
+                        <li><a href="{{ url('/list_blog') }}">All Blog Post</a></li>
+                        <li><a href="{{ url('/blog') }}">Add Blog Post</a></li>
                     </ul>
                 </li>
 

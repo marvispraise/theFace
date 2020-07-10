@@ -1,134 +1,121 @@
-<!DOCTYPE html>
-<html lang="en">
-
-@include('users.includes.nav')
-
-<body class="index-opt-1 catalog-product-view catalog-view_op1 page-order">
-
-	<div class="wrapper">
+<!doctype html>
+<html class="no-js" lang="zxx">
 
 
+<!-- Mirrored from demo.hasthemes.com/theface-preview/theface-v3/cart.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jul 2020 15:41:03 GMT -->
+@include('users.inc.header')
 
-        @include('users.includes.header');
+<body>
 
-        <!-- MAIN -->
-		<main class="site-main">
+    <div id="main-wrapper">
 
-            <div class="columns container">
-                <!-- Block  Breadcrumb-->
+        <!--Header section start-->
+       @include('users.inc.nav')
+        <!--Header section end-->
+
+        <!-- Page Banner Section Start -->
+        <div class="page-banner-section section bg-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
                         
-                <ol class="breadcrumb no-hide">
-                    <li><a href="#">Home    </a></li>
-                    <li class="active">Your shopping cart</li>
-                </ol><!-- Block  Breadcrumb-->
+                        <div class="page-banner text-center">
+                            <h1>Shopping Cart</h1>
+                            <ul class="page-breadcrumb">
+                                <li><a href="{{url('/')}}">Home</a></li>
+                                <li>Cart</li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Banner Section End -->
 
-                <h2 class="page-heading">
-                    <span class="page-heading-title2">Shopping Cart Summary</span>
-                </h2>
-
-                <div class="page-content page-order">
-                    <ul class="step">
-                        <li class="current-step"><span>01. Summary</span></li>
-                        <li><span>02. Sign in</span></li>
-                        <li><span>03. Address</span></li>
-                        <li><span>04. Shipping</span></li>
-                        <li><span>05. Payment</span></li>
-                    </ul>
-                    <div class="order-detail-content">
-                        <div class="table-responsive">
-                            @include('users.includes.alert')
-                            <table class="table table-bordered  cart_summary">
+        <!--Cart section start-->
+        <div class="cart-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50  pb-70 pb-lg-50 pb-md-40 pb-sm-30 pb-xs-20">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-12">            
+                        <!-- Cart Table -->
+                        <div class="cart-table table-responsive mb-30">
+                            <table class="table">
+                                @include('users.inc.alert')
                                 <thead>
                                     <tr>
-                                        <th class="cart_product">Product</th>
-                                        <th>Description</th>
-                                        <th>Avail.</th>
-                                        <th>Unit price</th>
-                                        <th>Total</th>
-                                        <th class="action"><i class="fa fa-trash-o"></i></th>
+                                        <th class="pro-thumbnail">Image</th>
+                                        <th class="pro-title">Product</th>
+                                        <th class="pro-price">Price</th>
+                                        <th class="pro-quantity">Quantity</th>
+                                        <th class="pro-subtotal">Total</th>
+                                        <th class="pro-remove">Remove</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @if (\Darryldecode\Cart\Facades\CartFacade::isEmpty())
                                     <p class="alert alert-warning">Your shopping cart is empty.</p>
                                 @else
-                                @foreach($items as $item)
-
+                                    @foreach($items as $item)
                                     <tr>
-                                        <td class="cart_product">
-                                            <a href="#"><img alt="Product" src="/images/{{$item->image}}"></a>
-                                        </td>
-                                        <td class="cart_description">
-                                            <p class="product-name"><a href="#">{{$item->name}} </a></p>
-                                        </td>
-                                        <td class="cart_avail">
-
-                                            @if($item->availability == 0)
-                                                <span class="label label-danger">Not in stock</span>
-                                            @else
-                                                <span class="label label-success">In stock</span>
-                                            @endif
-                                        </td>
-
-                                        <td class="price"><span>${{$item->price}}</span></td>
-                                        <td class="price">
-                                            <span>${{$item->price}}</span>
-                                        </td>
-                                        <td class="action">
-                                            <a href="{{url('/deleteItem/'.$item->id)}}">Delete item</a>
-                                        </td>
+                                        <td class="pro-thumbnail"><a href="#"><img src="/images/{{$item->image}}" alt="Product"></a></td>
+                                        <td class="pro-title"><a href="#">{{$item->name}}</a></td>
+                                        <td class="pro-price"><span>${{$item->price}}</span></td>
+                                        <td class="pro-quantity"><div class="pro">{{$item->quantity}}</div></td>
+                                        <td class="pro-subtotal"><span>${{$item->price * $item->quantity}}</span></td>
+                                        <td class="pro-remove"><a href="{{url('/deleteItem/'.$item->id)}}"><i class="fa fa-trash-o"></i></a></td>
                                     </tr>
-
-                                @endforeach
+                                    @endforeach
                                 @endif
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <td rowspan="2" colspan="2"></td>
-                                        <td colspan="3"></td>
-                                        <td colspan="2">
-                                            <a href="{{url('/clearCart')}}" class="btn btn-danger">Clear Cart</a>
-                                        </td>                                    </tr>
-                                    <tr>
-                                        <td colspan="3"><strong>Total</strong></td>
-                                        <td colspan="2"><strong>${{\Darryldecode\Cart\Facades\CartFacade::getSubTotal()}}</strong></td>
-
-                                    </tr>
-
-                                </tfoot>    
                             </table>
                         </div>
-                        <div class="cart_navigation">
 
+                        <div class="row">
 
-                            <a href="{{url('/')}}" class="prev-btn">Continue shopping</a>
-                            <a href="{{url('/getCheckout')}}" class="next-btn">Proceed to checkout</a>
+                            <div class="col-lg-6 col-12 mb-5">
+                            </div>
+
+                            <!-- Cart Summary -->
+                            <div class="col-lg-6 col-12 mb-30 d-flex">
+                                <div class="cart-summary">
+                                    <div class="cart-summary-wrap">
+                                        <h4>Cart Summary</h4>
+                                        <p>Sub Total <span>${{\Darryldecode\Cart\Facades\CartFacade::getSubTotal()}}</span></p>
+                                        <p>Shipping Cost <span>$00.00</span></p>
+                                        <h2>Grand Total <span>${{\Darryldecode\Cart\Facades\CartFacade::getSubTotal()}}</span></h2>
+                                    </div>
+                                    <div class="cart-summary-button">
+                                        <a href="{{url('/getCheckout')}}" class="btn">Checkout</a>
+                                        <a href="{{url('/clearCart')}}" class="btn">Clear Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
+                        
                     </div>
-                </div>
-                <br>
+                    
+                </div>            
             </div>
+        </div>
+        <!--Cart section end-->
 
-        </main><!-- end MAIN -->
+        <!--Footer section start-->
+    @include('users.inc.footer')
+        <!--Footer section end-->
 
-		<!-- FOOTER -->
-            @include('users.includes.footer');
 
-		
-        <!--back-to-top  -->
-        <a href="#" class="back-to-top">
-            <i aria-hidden="true" class="fa fa-angle-up"></i>
-        </a>
-        
-	</div>
+    </div>
 
-    
-    
+    <!-- Placed js at the end of the document so the pages load faster -->
 
-    <!-- jQuery -->
-    @include('users.includes.scripts');
+    <!-- All jquery file included here -->
+    @include('users.inc.scripts')
 
 </body>
 
-<!-- Mirrored from kute-themes.com/html/kuteshop/html/Order.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 09 Jun 2020 15:41:26 GMT -->
+
+<!-- Mirrored from demo.hasthemes.com/theface-preview/theface-v3/cart.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jul 2020 15:41:03 GMT -->
 </html>

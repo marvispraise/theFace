@@ -12,12 +12,12 @@
             <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">View Section Image</h4>
+                        <h4 class="page-title">View Blog Image</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <ol class="breadcrumb">
                             <li><a href="#">Dashboard</a></li>
-                            <li class="active">Section Image</li>
+                            <li class="active">Blog</li>
                         </ol>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -28,13 +28,16 @@
                         @include('admin.includes.alert');
 
                         <div class="white-box">
-                            <h3 class="box-title m-b-0">Section Image</h3>
-                            <p class="text-muted m-b-30">All Section Images</p>
+                            <h3 class="box-title m-b-0">Blog </h3>
+                            <p class="text-muted m-b-30">Blog Images</p>
                             <div class="table-responsive">
                                 <table id="myTable" class="table table-striped">
                                     <thead>
                                         <tr>
                                             <th>S/N</th>
+                                            <th>Title</th>
+                                            <th>Category</th>
+                                            <th>Content</th>
                                             <th>image</th>
                                             <th>Actions</th>
                                         </tr>
@@ -44,7 +47,10 @@
                                         @foreach($banners as $banner)
                                         <tr>
                                             <td>{{$x++}}</td>
-                                            <td><img src="/images/{{$banner->image}}" alt="banner" style="height: 50px; width: 50px;"/></td>
+                                            <td>{{$banner->title}}</td>
+                                            <td>{{$banner->category}}</td>
+                                            <td>{!! nl2br(e($banner->content)) !!}</td>
+                                            <td><img src="/images/{{$banner->img}}" alt="banner" style="height: 50px; width: 50px;"/></td>
                                             <td><a href="{{url('edit_section/'.$banner->id)}}"><span class="label label-rouded label-warning"> Edit</span></a> || <a href="{{ route('deleteSection', ['id' => $banner->id]) }}"> <span class="label label-rounded label-danger">Delete</span></a></td>
                                             <td></td>
                                         </tr>

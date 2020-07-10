@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\BestSeller;
 use App\Category;
+use App\FeaturedProduct;
+use App\HotDeal;
 use App\Product;
 use App\Testimonial;
 use Darryldecode\Cart\Facades\CartFacade;
@@ -60,15 +63,18 @@ class ProductController extends Controller
     public function editCategory($id, Request $request) {
         request()->validate([
             'category' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 
         ]);
 
         $cat = Category::find($id);
-        $imageName = time(). '.' . request()->image->getClientOriginalExtension();
-        request()->image->move(public_path('images'), $imageName);
+        if($request->has("image")){
+
+            $imageName = time(). '.' . request()->image->getClientOriginalExtension();
+            request()->image->move(public_path('images'), $imageName);
+            $cat->image       = $imageName;
+
+        }
         $cat->category_name     = $request->get('category');
-        $cat->image     = $imageName;
 
         $cat->save();
 
@@ -119,25 +125,29 @@ class ProductController extends Controller
         $store->category_id             = $request->category;
         $store->name                    = $request->name;
         $store->price                   = $request->price;
-        if ($request->specialProduct){
-            $store->special_product = $request->specialProduct;
-        }else{
-            $store->special_product = 0;
-        }
-
-        if ($request->hotDeal){
-            $store->hot_deal = $request->hotDeal;
-        }else{
-            $store->hot_deal = 0;
-        }
-
         if ($request->discount){
-            $store->discount = $request->discount;
+            $store->discount            = $request->discount;
         }else{
-            $store->discount = '0%';
+            $store->discount = 0;
         }
-        $store->availability = $request->availability;
+        if ($request->availability){
+            $store->availability               = $request->availability;
+        }else{
+            $store->availability               = 0;
+        }
         $store->save();
+
+        if ($request->featuredProduct){
+            $fProduct = new FeaturedProduct();
+            $fProduct->product_id = $store->unique_id;
+            $fProduct->save();
+        }
+
+        if ($request->bestSeller){
+            $bSeller = new BestSeller();
+            $bSeller->product_id = $store->unique_id;
+            $bSeller->save();
+        }
 
         return back()
             ->with('success','Successfully Uploaded Product.');
@@ -163,35 +173,32 @@ class ProductController extends Controller
             'name' => 'required',
             'price' => 'required',
             'availability' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
         ]);
 
         $store = Product::find($id);
-        $imageName = time(). '.' . request()->image->getClientOriginalExtension();
-        request()->image->move(public_path('images'), $imageName);
 
-        $store->product_image       = $imageName;
+        if($request->has("image")){
+
+            $imageName = time(). '.' . request()->image->getClientOriginalExtension();
+            request()->image->move(public_path('images'), $imageName);
+            $store->product_image       = $imageName;
+
+        }
+
         $store->category_id             = $request->category;
         $store->name                    = $request->name;
         $store->price                   = $request->price;
-        if ($request->specialProduct){
-            $store->special_product = $request->specialProduct;
-        }else{
-            $store->special_product = 0;
-        }
-
-        if ($request->hotDeal){
-            $store->hot_deal = $request->hotDeal;
-        }else{
-            $store->hot_deal = 0;
-        }
-
         if ($request->discount){
-            $store->discount = $request->discount;
+            $store->discount            = $request->discount;
         }else{
-            $store->discount = '0%';
+            $store->discount = 0;
         }
-        $store->availability = $request->availability;
+        if ($request->availability){
+            $store->availability               = $request->availability;
+        }else{
+            $store->availability               = 0;
+        }
         $store->save();
 
         return redirect()->route('list_product')
@@ -271,13 +278,13 @@ class ProductController extends Controller
     public function productDetails($id){
         $product = Product::find($id);
         $relatedProducts = Product::where('category_id', $product->category_id)->where('id', '!=', $product->id)->get();
-        return view('users/product-details', ['product' => $product, 'relatedProducts' => $relatedProducts]);
+        return view('users.single-product', ['product' => $product, 'relatedProducts' => $relatedProducts]);
 
     }
 
     public function viewProduct($category){
-        $testimonials = Testimonial::all();
-        $sProducts = Product::where('special_product',1);
+//        $testimonials = Testimonial::all();
+//        $sProducts = Product::where('special_product',1);
         $categories = Category::all();
         $cat= Category::find($category);
         $categoryProducts = array();
@@ -288,13 +295,11 @@ class ProductController extends Controller
                 'category_products' =>  Product::where('category_id', $cat->unique_id)->get()
             );
 
-        return view('users/products',
+        return view('users.shop',
             [
                 'categories' => $categories,
                 'categoryProducts' => $categoryProducts,
                 'cat' => $cat,
-                'testimonials' => $testimonials,
-                'sProducts' => $sProducts
             ]);
 
     }
@@ -302,21 +307,79 @@ class ProductController extends Controller
 
     public function search(Request $request){
 
-         $search_results = Product::where('name','LIKE', '%'.$request->search.'%')->get();
+         $searchs = Product::where('name','LIKE', '%'.$request->search.'%')->get();
 //        dd($search_results);
 
         return view('users.search',
             [
-                'search_results' => $search_results,
+                'searchs' => $searchs,
             ]);
+
+
+    }
+     public function searchP(Request $request){
+
+         if($request->ajax()) {
+
+             $data = Product::where('name', 'LIKE', '%'. $request->product.'%')
+                 ->get();
+
+             $output = '';
+
+             if (count($data)>0) {
+
+                 $output = '<ul class="list-group" style="display: block; position: relative; z-index: 1">';
+
+                 foreach ($data as $row){
+
+                     $output .= '<li class="list-group-item">'.$row->name.'</li>';
+                 }
+
+                 $output .= '</ul>';
+             }
+             else {
+
+                 $output .= '<span class="list-group-item">'.'No results'.'</span>';
+             }
+
+             return $output;
+         }
+
+
+//            return view('users.search',
+//                [
+//                    'searchs' => $searchs,
+//                ]);
 
 
     }
 
 
-    public function create()
+    public function hotDeal()
     {
-        //
+        $data['products']= Product::all();
+        return view('admin.hot_deal',$data);
+    }
+
+    public function saveHotDeal(Request $request){
+
+        request()->validate([
+            'product' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required',
+        ]);
+
+        $cat = new HotDeal();
+        $cat->product_id     = $request->get('product');
+        $cat->start_date     = strtotime($request->get('start_date'));
+        $cat->end_date     = strtotime($request->get('end_date'));
+
+        $cat->save();
+
+
+        return redirect()->route('hotDeal')
+            ->with('success','Successfully Added Hot Deal Product.');
+
     }
 
 

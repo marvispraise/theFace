@@ -93,21 +93,6 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="exampleInputTitle">Special Product</label>
-                                            <div class="input-group">
-                                                <input type="checkbox" name="specialProduct" id="exampleInputTitle1" value=1>
-                                                <label> Is this a special product</label>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputTitle">Hot Deal</label>
-                                            <div class="input-group">
-                                                <input type="checkbox" name="hotDeal" id="exampleInputTitle1" value=1>
-                                                <label> Is this a Hot deal product</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
                                             <label for="exampleInputImage">Upload Image</label>
                                             <div class="white-box">
                                                 <img src="/images/{{$product->product_image}}" alt="banner" style="height: 100px; width: 100px;"/>
