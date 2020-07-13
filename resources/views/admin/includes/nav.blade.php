@@ -76,13 +76,6 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#" class="waves-effect"><i data-icon="." class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Testimonial<span class="fa arrow"></span></span></a>
-                    <ul class="nav nav-second-level">
-                        <li><a href="{{ url('/list_testimonial') }}">All Testimonials</a></li>
-                        <li><a href="{{ url('/testimonial') }}">Add Testimonial</a></li>
-                    </ul>
-                </li>
-                <li>
                     <a href="#" class="waves-effect"><i data-icon="]" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Blog Post<span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level">
                         <li><a href="{{ url('/list_blog') }}">All Blog Post</a></li>
