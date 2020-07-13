@@ -39,7 +39,8 @@
                                             <label for="exampleInputImage">Product</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="ti-text"></i></div>
-                                                <input type="text" class="form-control" id="product" name="product" placeholder="Search Product">
+                                                <input type="text" class="form-control" id="product"  placeholder="Search Product">
+                                                <input type="hidden" class="form-control" id="product_id" name="product" placeholder="Search Product">
                                                 {{--<select class="form-control select2" name="product">--}}
                                                     {{--<option disabled selected>Select . . .</option>--}}
                                                     {{--@if(count($products) > 0)--}}
@@ -117,7 +118,9 @@
             $(document).on('click', 'li', function(){
 
                 var value = $(this).text();
+                var product_id = $(this).attr("product_id");
                 $('#product').val(value);
+                $('#product_id').val(product_id);
                 $('#white-box').html("");
             });
         });

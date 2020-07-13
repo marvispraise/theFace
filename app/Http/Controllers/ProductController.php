@@ -332,7 +332,7 @@ class ProductController extends Controller
 
                  foreach ($data as $row){
 
-                     $output .= '<li class="list-group-item">'.$row->name.'</li>';
+                     $output .= '<li class="list-group-item" product_id="'.$row->unique_id.'">'.$row->name.'</li>';
                  }
 
                  $output .= '</ul>';
