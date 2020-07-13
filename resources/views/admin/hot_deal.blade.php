@@ -41,16 +41,6 @@
                                                 <div class="input-group-addon"><i class="ti-text"></i></div>
                                                 <input type="text" class="form-control" id="product"  placeholder="Search Product">
                                                 <input type="hidden" class="form-control" id="product_id" name="product" placeholder="Search Product">
-                                                {{--<select class="form-control select2" name="product">--}}
-                                                    {{--<option disabled selected>Select . . .</option>--}}
-                                                    {{--@if(count($products) > 0)--}}
-                                                        {{--@foreach($products as $product)--}}
-                                                        {{--<option value="{{$product->unique_id}}">{{$product->name}}</option>--}}
-                                                        {{--@endforeach--}}
-                                                        {{--@else--}}
-                                                        {{--<h3>No Products Found</h3>--}}
-                                                     {{--@endif--}}
-                                                {{--</select>--}}
 
                                             </div>
                                         <div id="white-box"></div>

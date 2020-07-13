@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6d452ed-e4dc-4763-a5fe-aba45d7427c4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/users/about.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/users/blog-details.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/users/blog-list.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/users/cart.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/users/checkout.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/users/contact.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/users/inc/alert.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/users/inc/footer.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/users/inc/header.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/users/inc/nav.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/users/inc/scripts.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/users/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/users/login.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/users/orders.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/users/register.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/users/search.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/users/shop.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/users/single-product.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/hot_deal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/hot_deal.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +78,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key=".env file" value="1" />
-          <entry key="Blade" value="83" />
+          <entry key="Blade" value="85" />
           <entry key="CSS" value="4" />
           <entry key="HTML" value="5" />
           <entry key="Image" value="1" />
@@ -165,6 +148,15 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/hot_deal.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="282">
+              <caret line="42" column="150" selection-start-line="42" selection-start-column="150" selection-end-line="42" selection-end-column="150" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/users/search.blade.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -183,7 +175,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/users/single-product.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3281">
@@ -193,19 +185,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/users/cart.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/includes/nav.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/users/checkout.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="197" selection-start-line="197" selection-end-line="197" />
+            <state relative-caret-position="232">
+              <caret line="76" column="21" selection-start-line="76" selection-start-column="21" selection-end-line="76" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -272,7 +255,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/CartController.php" />
         <option value="$PROJECT_DIR$/resources/views/users/inc/nav.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/includes/nav.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/tree.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_07_09_102819_create_hot_deals_table.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/product.blade.php" />
@@ -285,7 +267,6 @@
         <option value="$PROJECT_DIR$/resources/views/users/inc/footer.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/hot_deal.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/users/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/users/about.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/users/blog-details.blade.php" />
@@ -299,6 +280,8 @@
         <option value="$PROJECT_DIR$/resources/views/users/search.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/users/shop.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/users/single-product.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/includes/nav.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/hot_deal.blade.php" />
       </list>
     </option>
   </component>
@@ -507,6 +490,14 @@
               <item name="admin-shop" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="includes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="admin-shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="admin-shop" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="users" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -592,12 +583,12 @@
       <workItem from="1594286235451" duration="22423000" />
       <workItem from="1594371186303" duration="1876000" />
       <workItem from="1594637489706" duration="872000" />
-      <workItem from="1594644947075" duration="3246000" />
+      <workItem from="1594644947075" duration="3500000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="400632000" />
+    <option name="totallyTimeSpent" value="400886000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -773,13 +764,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/includes/nav.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="78" column="188" selection-start-line="78" selection-start-column="188" selection-end-line="78" selection-end-column="188" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/product.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
@@ -846,13 +830,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/hot_deal.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="51" column="67" selection-start-line="51" selection-start-column="67" selection-end-line="51" selection-end-column="67" />
         </state>
       </provider>
     </entry>
@@ -968,6 +945,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3281">
           <caret line="193" selection-start-line="193" selection-end-line="193" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/includes/nav.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="76" column="21" selection-start-line="76" selection-start-column="21" selection-end-line="76" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/hot_deal.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="42" column="150" selection-start-line="42" selection-start-column="150" selection-end-line="42" selection-end-column="150" />
         </state>
       </provider>
     </entry>
