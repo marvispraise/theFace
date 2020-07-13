@@ -191,5 +191,4 @@
 </body>
 
 
-<!-- Mirrored from demo.hasthemes.com/theface-preview/theface-v3/single-product.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jul 2020 15:41:04 GMT -->
 </html>

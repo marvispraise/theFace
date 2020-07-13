@@ -2,7 +2,6 @@
 <html class="no-js" lang="zxx">
 
 
-<!-- Mirrored from demo.hasthemes.com/theface-preview/theface-v3/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jul 2020 15:38:59 GMT -->
 @include('users.inc.header')
 
 <body>
@@ -366,12 +365,6 @@
                                         placeholder="Your email address here" />
                                     <button type="submit" id="submit">Subscribe</button>
                                 </form>
-                                {{--<!-- mailchimp-alerts Start -->--}}
-                                {{--<div class="mailchimp-alerts text-centre">--}}
-                                    {{--<div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->--}}
-                                    {{--<div class="mailchimp-success"></div><!-- mailchimp-success end -->--}}
-                                    {{--<div class="mailchimp-error"></div><!-- mailchimp-error end -->--}}
-                                {{--</div><!-- mailchimp-alerts end -->--}}
                             </div>
                         </div>
                     </div>
@@ -447,12 +440,9 @@
         @include('users.inc.footer')
         <!--Footer section end-->
 
-        <!-- Modal Area Strat -->
-        <!-- Modal Area End -->
 
     </div>
 
-    <!-- Placed js at the end of the document so the pages load faster -->
 
     <!-- All jquery file included here -->
     @include('users.inc.scripts')
@@ -477,5 +467,4 @@
 </body>
 
 
-<!-- Mirrored from demo.hasthemes.com/theface-preview/theface-v3/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jul 2020 15:40:11 GMT -->
 </html>

@@ -120,5 +120,4 @@
 </body>
 
 
-<!-- Mirrored from demo.hasthemes.com/theface-preview/theface-v3/search.blade.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jul 2020 15:41:03 GMT -->
 </html>

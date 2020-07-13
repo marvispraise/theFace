@@ -2,7 +2,6 @@
 <html class="no-js" lang="zxx">
 
 
-<!-- Mirrored from demo.hasthemes.com/theface-preview/theface-v3/login.blade.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jul 2020 15:40:52 GMT -->
 @include('users.inc.header')
 
 <body>
@@ -90,7 +89,6 @@
 
     </div>
 
-    <!-- Placed js at the end of the document so the pages load faster -->
 
     <!-- All jquery file included here -->
     @include('users.inc.scripts')
@@ -99,5 +97,4 @@
 </body>
 
 
-<!-- Mirrored from demo.hasthemes.com/theface-preview/theface-v3/login.blade.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jul 2020 15:40:52 GMT -->
 </html>
